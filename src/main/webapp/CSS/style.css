@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body{
+	margin: 0px;
+	background-color: bisque;
+}
+#listagem{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#listagem td{
+	border: 1px solid #0080ff;
+	padding: 8px;
+	text-align:center;
+}
+#listagem th{
+	background-color:#5DADE2;
+	color: black;
+	padding: 10px;
+	text-align:center;
+}
+#listagem tr:hover{
+	background-color:#5DADE2;
+}
+#image{
+	width:80px;
+	height:80px;
+	border-radius: 60px;
+}
+
+#image:hover {
+  transform: scale(1.5); 
+}
+
+
