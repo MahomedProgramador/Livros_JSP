@@ -7,11 +7,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Listagem Editoras</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
+	<%@include file="menu.jsp" %> 
 	<div class="container" style="background-color: Gainsboro">
 	
 	<h1>Listagem de editoras</h1>

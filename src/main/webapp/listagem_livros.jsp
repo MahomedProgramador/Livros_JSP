@@ -12,7 +12,7 @@
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
-
+	<%@include file="menu.jsp" %> 
 	<div class="container" style="background-color: Gainsboro">
 	
 	
@@ -30,9 +30,7 @@
 				<th>Preço</th>
 				<th></th>
 				<th></th>
-	
-			</tr>
-			
+			</tr>			
 			<%
 				
 				Connection cn=ligacaomysql.criarligacao();
@@ -48,8 +46,7 @@
 					    "livros.id_autor=autores.id_autor";
 			    
 			   
-				    rs=st.executeQuery(sql);
-				    
+				    rs=st.executeQuery(sql);			    
 			   
 			    
 			    while(rs.next()){
@@ -63,11 +60,9 @@
 			    	out.println("<td><a href='alterar_livro.jsp?alterar="+rs.getString(1)+"'><input type='button' class='btn btn-primary' value='Update'></a></td>");
 			    	out.println("<td><a href='eliminar_livro.jsp?eliminar="+rs.getString(1)+"'><input type='button' class='btn btn-danger' value='Delete'></a></td></tr>");
 		
-			    }
-			
+			    }			
 			    cn.close();
-			%>
-		
+			%>		
 		</table>
 	
 	</div>

@@ -12,6 +12,7 @@
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
+	<%@include file="menu.jsp" %> 
 	<h1>Eliminar género</h1>
 	<div id="aviso"></div>
 	<%
@@ -20,11 +21,11 @@
 		Statement st = cn.createStatement();
 		try{
 			st.executeUpdate("DELETE FROM generos WHERE id_genero = '" + fgenero+"'");
-			
+	
 			%>
 			<script>
 				document.getElementById("aviso").style.visibility = "visible";
-				document.getElementById("aviso").innerHTML.visibility = "<h1> Género eliminado</h1>";
+				document.getElementById("aviso").innerHTML= "<h1> Género eliminado</h1>";
 			</script>
 			<%
 			response.setIntHeader("Refresh", 3);
@@ -35,7 +36,7 @@
 			%>
 				<script>
 					document.getElementById("aviso").style.visibility = "visible";
-					document.getElementById("aviso").innerHTML.visibility = "<h1> Erro ao eliminar o género</h1>";
+					document.getElementById("aviso").innerHTML = "<h1> Erro ao eliminar o género</h1>";
 				</script>
 			<%
 		}

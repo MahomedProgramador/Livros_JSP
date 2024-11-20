@@ -6,26 +6,26 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Eliminar editora</title>
+	<title>Eliminar livros</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
 	<%@include file="menu.jsp" %> 
-	<h1>Eliminar editora</h1>
+	<h1>Eliminar livros</h1>
 	<div id="aviso"></div>
 	<%
-		String feditora = request.getParameter("eliminar");
+		String flivro = request.getParameter("eliminar");
 		Connection cn = ligacaomysql.criarligacao();
 		Statement st = cn.createStatement();
 		try{
-			st.executeUpdate("DELETE FROM editoras WHERE id_editora = '" + feditora+"'");
+			st.executeUpdate("DELETE FROM livros WHERE id_livro = '" + flivro+"'");
 			
 			%>
 			<script>
 				document.getElementById("aviso").style.visibility = "visible";
-				document.getElementById("aviso").innerHTML = "<h1> Editora eliminada</h1>";
+				document.getElementById("aviso").innerHTML = "<h1> Livro eliminado</h1>";
 			</script>
 			<%
 			response.setIntHeader("Refresh", 3);
@@ -36,9 +36,10 @@
 			%>
 				<script>
 					document.getElementById("aviso").style.visibility = "visible";
-					document.getElementById("aviso").innerHTML = "<h1> Erro ao eliminar a editora</h1>";
+					document.getElementById("aviso").innerHTML = "<h1> Erro ao eliminar o livro</h1>";
 				</script>
 			<%
+			out.println(e);
 		}
 	%>
 

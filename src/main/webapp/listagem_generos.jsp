@@ -6,21 +6,22 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Listagem Editoras</title>
+	<title>Listagem Géneros</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
+	<%@include file="menu.jsp" %> 
 	<div class="container" style="background-color: Gainsboro">
 	
-	<h1>Listagem de editoras</h1>
+	<h1>Listagem de géneros</h1>
 	
 		<table id="listagem">
 		
 			<tr>
-				<th>Id. Editora</th>
-				<th>Editora</th>
+				<th>Id. Género</th>
+				<th>Género</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -29,13 +30,13 @@
 			
 				Connection cn=ligacaomysql.criarligacao();
 			    Statement st=cn.createStatement();
-			    ResultSet rs=st.executeQuery("select * from editoras order by id_editora");
+			    ResultSet rs=st.executeQuery("select * from generos order by id_genero");
 			    
 			    while(rs.next()){
 			    	out.println("<tr><td>"+rs.getString(1)+"</td>");
 			    	out.println("<td>"+rs.getString(2)+"</td>");
-			    	out.println("<td><a href='alterar_editora.jsp?alterar="+rs.getString(1)+"'><input type='button' class='btn btn-primary' value='Update'></a></td>");
-			    	out.println("<td><a href='eliminar_editora.jsp?eliminar="+rs.getString(1)+"'><input type='button' class='btn btn-danger' value='Delete'></a></td></tr>");			    	
+			    	out.println("<td><a href='alterar_genero.jsp?alterar="+rs.getString(1)+"'><input type='button' class='btn btn-primary' value='Update'></a></td>");
+			    	out.println("<td><a href='eliminar_genero.jsp?eliminar="+rs.getString(1)+"'><input type='button' class='btn btn-danger' value='Delete'></a></td></tr>");
 			    }
 			
 			    cn.close();
@@ -43,7 +44,7 @@
 		
 		</table>
 	
-	</div>
+</div>
 	
 </body>
 </html>

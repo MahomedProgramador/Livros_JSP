@@ -11,6 +11,7 @@
 	<link rel="icon" href="imagens/favicon.png">
 </head>
 <body>
+	<%@include file="menu.jsp" %> 
 	<div class="container" style="background-color: Gainsboro">
 		<h1>Nova Editora</h1>
 		<form method="POST" action="editoras.jsp">
